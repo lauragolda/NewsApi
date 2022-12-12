@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+{% block content %}
+    {% for article in articles %}
+        <div>
+            <li>
+                <a href="{{ article.getUrl }}" target="_blank">{{ article.getTitle }}</a>
+                <br>
+                {% if article.getPicture %}
+                    <img style="width:400px;height:220px;" src="{{ article.getPicture }}"/>
+                {% else %}
+                    <p>No Image found</p>
+                {% endif %}
+            </li>
+        </div>
+    {% endfor %}
+{% endblock %}
